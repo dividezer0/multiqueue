@@ -25,13 +25,13 @@ void *receive_message(void *data)
 
 int main(int argc, char *argv[])
 {
-    if (argc != 3) {
-        fprintf(stderr, "Usage: %s recv_thread_count send_thread_count\n", argv[0]);
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <send/recv thread count>\n", argv[0]);
         return 1;
     }
 
     int recv_count = atoi(argv[1]);
-    int send_count = atoi(argv[2]);
+    int send_count = recv_count;
 
     multiqueue_t *queue = multiqueue_init();
 
